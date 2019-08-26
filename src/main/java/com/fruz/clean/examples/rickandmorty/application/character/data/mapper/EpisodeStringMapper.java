@@ -10,8 +10,8 @@ public class EpisodeStringMapper extends Mapper<Episode, String> {
   }
 
   @Override public Episode reverseMap(String value) {
-    String[] splitedUrl = value.split("/");
-    String episodeCode = splitedUrl[splitedUrl.length-1];
+    String[] splittedUrl = value.split("/");
+    String episodeCode = splittedUrl[splittedUrl.length-1];
     Episode episode = new Episode();
     episode.name = "";
     episode.code = episodeCode;
