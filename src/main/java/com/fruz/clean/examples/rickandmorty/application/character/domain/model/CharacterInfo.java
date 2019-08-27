@@ -13,5 +13,5 @@ public class CharacterInfo {
   @JsonProperty
   public String gender;
   @JsonProperty
-  public List<Episode> episodes;
+  public FirstAppearance firstAppearance;
 }

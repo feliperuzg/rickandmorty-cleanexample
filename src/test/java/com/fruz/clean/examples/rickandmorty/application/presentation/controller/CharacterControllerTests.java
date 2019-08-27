@@ -1,13 +1,11 @@
 package com.fruz.clean.examples.rickandmorty.application.presentation.controller;
 
 import com.fruz.clean.examples.rickandmorty.application.character.domain.model.CharacterInfo;
-import com.fruz.clean.examples.rickandmorty.application.character.domain.model.Episode;
+import com.fruz.clean.examples.rickandmorty.application.character.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.character.domain.usecase.CharacterInfoUseCase;
 import com.fruz.clean.examples.rickandmorty.application.character.presentation.body.CharacterInfoBody;
 import com.fruz.clean.examples.rickandmorty.application.character.presentation.controller.Character;
 import com.fruz.clean.examples.rickandmorty.application.character.presentation.controller.CharacterController;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +34,7 @@ public class CharacterControllerTests {
   private final String DATA_CHARACTER_SPECIES = "species";
   private final String DATA_CHARACTER_GENDER = "gender";
   private final String DATA_EPISODE_NAME = "Episode name";
-  private final String DATA_EPISODE_CODE = "10";
+  private final String DATA_EPISODE_CODE = "S01E10";
 
   @Mock
   CharacterInfoUseCase characterInfoUseCase;
@@ -56,12 +54,10 @@ public class CharacterControllerTests {
     characterInfo.species = DATA_CHARACTER_SPECIES;
     characterInfo.gender = DATA_CHARACTER_GENDER;
 
-    List<Episode> episodes = new ArrayList<>();
-    Episode episode = new Episode();
-    episode.code = DATA_EPISODE_CODE;
-    episode.name = DATA_EPISODE_NAME;
-    episodes.add(episode);
-    characterInfo.episodes = episodes;
+    FirstAppearance firstAppearance = new FirstAppearance();
+    firstAppearance.code = DATA_EPISODE_CODE;
+    firstAppearance.name = DATA_EPISODE_NAME;
+    characterInfo.firstAppearance = firstAppearance;
   }
 
   @Test
@@ -79,9 +75,8 @@ public class CharacterControllerTests {
     Assert.assertEquals(DATA_CHARACTER_GENDER, characterInfo.gender);
     Assert.assertEquals(DATA_CHARACTER_SPECIES, characterInfo.species);
     Assert.assertEquals(DATA_CHARACTER_STATUS, characterInfo.status);
-    Assert.assertEquals(1, characterInfo.episodes.size());
-    Assert.assertEquals(DATA_EPISODE_CODE ,characterInfo.episodes.get(0).code);
-    Assert.assertEquals(DATA_EPISODE_NAME ,characterInfo.episodes.get(0).name);
+    Assert.assertEquals(DATA_EPISODE_CODE ,characterInfo.firstAppearance.code);
+    Assert.assertEquals(DATA_EPISODE_NAME ,characterInfo.firstAppearance.name);
   }
 
   @Test(expected = MethodArgumentNotValidException.class)
@@ -89,4 +84,4 @@ public class CharacterControllerTests {
     CharacterInfoBody characterInfoBody1 = new CharacterInfoBody();
     characterController.info(characterInfoBody1);
   }
-}-…
+}
