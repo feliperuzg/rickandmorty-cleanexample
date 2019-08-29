@@ -3,11 +3,11 @@ package com.fruz.clean.examples.rickandmorty.application.character.data.datasour
 import com.fruz.clean.examples.rickandmorty.application.character.data.entity.CharacterEntity;
 import org.springframework.web.client.RestOperations;
 
-public class CharacterApiDatasoruce implements CharacterDatasource {
+public class CharacterApiDatasource implements CharacterDatasource {
   private final String characterUrl = "https://rickandmortyapi.com/api/character/";
   private final RestOperations restOperations;
 
-  public CharacterApiDatasoruce(RestOperations restOperations) {
+  public CharacterApiDatasource(RestOperations restOperations) {
     this.restOperations = restOperations;
   }
 

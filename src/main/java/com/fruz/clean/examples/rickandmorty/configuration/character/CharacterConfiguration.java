@@ -1,6 +1,6 @@
 package com.fruz.clean.examples.rickandmorty.configuration.character;
 
-import com.fruz.clean.examples.rickandmorty.application.character.data.datasource.CharacterApiDatasoruce;
+import com.fruz.clean.examples.rickandmorty.application.character.data.datasource.CharacterApiDatasource;
 import com.fruz.clean.examples.rickandmorty.application.character.data.datasource.CharacterDatasource;
 import com.fruz.clean.examples.rickandmorty.application.character.data.entity.CharacterEntity;
 import com.fruz.clean.examples.rickandmorty.application.character.data.mapper.CharacterInfoToCharacterEntityMapper;
@@ -61,7 +61,7 @@ public class CharacterConfiguration {
 
   @Bean
   CharacterDatasource characterDatasource() {
-    return new CharacterApiDatasoruce(restOperations());
+    return new CharacterApiDatasource(restOperations());
   }
 
   @Bean

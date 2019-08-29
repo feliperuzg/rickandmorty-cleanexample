@@ -12,8 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.context.SpringBootTestContextBootstrapper;
-import org.springframework.test.context.BootstrapWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
@@ -21,7 +19,6 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@BootstrapWith(SpringBootTestContextBootstrapper.class)
 public class CharacterControllerTests {
 
   private CharacterController characterController;
