@@ -1,11 +1,9 @@
 package com.fruz.clean.examples.rickandmorty.application.presentation.controller;
 
-import com.fruz.clean.examples.rickandmorty.application.character.domain.model.CharacterInfo;
-import com.fruz.clean.examples.rickandmorty.application.character.domain.model.FirstAppearance;
-import com.fruz.clean.examples.rickandmorty.application.character.domain.usecase.CharacterInfoUseCase;
-import com.fruz.clean.examples.rickandmorty.application.character.presentation.body.CharacterInfoBody;
-import com.fruz.clean.examples.rickandmorty.application.character.presentation.controller.Character;
-import com.fruz.clean.examples.rickandmorty.application.character.presentation.controller.CharacterController;
+import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
+import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
+import com.fruz.clean.examples.rickandmorty.application.domain.usecase.CharacterInfoUseCase;
+import com.fruz.clean.examples.rickandmorty.application.presentation.body.CharacterInfoBody;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
