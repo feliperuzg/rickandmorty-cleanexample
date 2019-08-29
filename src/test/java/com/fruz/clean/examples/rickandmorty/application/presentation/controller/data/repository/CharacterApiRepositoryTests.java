@@ -58,18 +58,18 @@ public class CharacterApiRepositoryTests {
   private final String DATA_EPISODE = "https://rickandmortyapi.com/api/episode/1";
   private final String DATA_EPISODE_ID = "1";
 
-  private final String DATA_EPISODEENTITY_AIRDATE = "December 2, 2013";
-  private final String DATA_EPISODEENTITY_CREATED = "2017-11-10T12:56:33.798Z";
-  private final String DATA_EPISODEENTITY_EPISODE = "S01E01";
-  private final String DATA_EPISODEENTITY_ID = "1";
-  private final String DATA_EPISODEENTITY_NAME = "Pilot";
-  private final String DATA_EPISODEENTITY_URL = "https://rickandmortyapi.com/api/episode/1";
+  private final String DATA_EPISODE_ENTITY_AIRDATE = "December 2, 2013";
+  private final String DATA_EPISODE_ENTITY_CREATED = "2017-11-10T12:56:33.798Z";
+  private final String DATA_EPISODE_ENTITY_EPISODE = "S01E01";
+  private final String DATA_EPISODE_ENTITY_ID = "1";
+  private final String DATA_EPISODE_ENTITY_NAME = "Pilot";
+  private final String DATA_EPISODE_ENTITY_URL = "https://rickandmortyapi.com/api/episode/1";
   private final String DATA_EPISODE_CHARACTERS_URL = "https://rickandmortyapi.com/api/character/1";
 
-  private final String DATA_CHARACTERINFO_NAME = "Ricky";
-  private final String DATA_CHARACTERINFO_STATUS = "Alive";
-  private final String DATA_CHARACTERINFO_SPECIES = "Human";
-  private final String DATA_CHARACTERINFO_GENDER = "Male";
+  private final String DATA_CHARACTER_INFO_NAME = "Ricky";
+  private final String DATA_CHARACTER_INFO_STATUS = "Alive";
+  private final String DATA_CHARACTER_INFO_SPECIES = "Human";
+  private final String DATA_CHARACTER_INFO_GENDER = "Male";
   private final String DATA_EPISODE_NAME = "Pilot";
   private final String DATA_EPISODE_CODE = "S01E01";
 
@@ -95,13 +95,13 @@ public class CharacterApiRepositoryTests {
     );
 
     episodeEntity = new EpisodeEntity();
-    episodeEntity.airDate = DATA_EPISODEENTITY_AIRDATE;
+    episodeEntity.airDate = DATA_EPISODE_ENTITY_AIRDATE;
     episodeEntity.chartacters = new ArrayList();
-    episodeEntity.created = DATA_EPISODEENTITY_CREATED;
-    episodeEntity.episode = DATA_EPISODEENTITY_EPISODE;
-    episodeEntity.id = DATA_EPISODEENTITY_ID;
-    episodeEntity.name = DATA_EPISODEENTITY_NAME;
-    episodeEntity.url = DATA_EPISODEENTITY_URL;
+    episodeEntity.created = DATA_EPISODE_ENTITY_CREATED;
+    episodeEntity.episode = DATA_EPISODE_ENTITY_EPISODE;
+    episodeEntity.id = DATA_EPISODE_ENTITY_ID;
+    episodeEntity.name = DATA_EPISODE_ENTITY_NAME;
+    episodeEntity.url = DATA_EPISODE_ENTITY_URL;
 
     episodeEntity.chartacters.add(DATA_EPISODE_CHARACTERS_URL);
 
@@ -143,10 +143,10 @@ public class CharacterApiRepositoryTests {
 
     CharacterInfo characterInfo = characterApiRepository.getInfo(DATA_CHARACTER_ID);
 
-    Assert.assertEquals(DATA_CHARACTERINFO_GENDER, characterInfo.gender);
-    Assert.assertEquals(DATA_CHARACTERINFO_NAME, characterInfo.name);
-    Assert.assertEquals(DATA_CHARACTERINFO_SPECIES, characterInfo.species);
-    Assert.assertEquals(DATA_CHARACTERINFO_STATUS, characterInfo.status);
+    Assert.assertEquals(DATA_CHARACTER_INFO_GENDER, characterInfo.gender);
+    Assert.assertEquals(DATA_CHARACTER_INFO_NAME, characterInfo.name);
+    Assert.assertEquals(DATA_CHARACTER_INFO_SPECIES, characterInfo.species);
+    Assert.assertEquals(DATA_CHARACTER_INFO_STATUS, characterInfo.status);
     Assert.assertEquals(DATA_EPISODE_CODE, characterInfo.firstAppearance.code);
     Assert.assertEquals(DATA_EPISODE_NAME, characterInfo.firstAppearance.name);
   }
