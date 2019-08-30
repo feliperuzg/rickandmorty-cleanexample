@@ -1,10 +1,11 @@
 package com.fruz.clean.examples.rickandmorty.application.presentation.controller.data.datasource.character;
 
-import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterApiDatasource;
-import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterApiDataSource;
+import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.CharacterEntity;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.LocationEntity;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.OriginEntity;
+import com.fruz.clean.examples.rickandmorty.configuration.character.CharacterProperties;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
@@ -22,7 +23,6 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CharacterApiDatasourceTests {
 
-  private final String DATA_URL = "https://rickandmortyapi.com/api/character/";
   private final String DATA_CHARACTER_CODE = "1";
 
   private final String DATA_CHARACTER_ID = "1";
@@ -44,20 +44,23 @@ public class CharacterApiDatasourceTests {
   private final String DATA_EPISODE = "1";
 
 
-  CharacterApiDatasource characterApiDatasource;
-  CharacterEntity characterEntity;
-  List<String> episode;
-  LocationEntity location;
-  OriginEntity origin;
+  private CharacterApiDataSource characterApiDatasource;
+  private CharacterEntity characterEntity;
+  private List<String> episode;
+  private LocationEntity location;
+  private OriginEntity origin;
 
   @Mock
-  RestOperations restOperations;
+  private RestOperations restOperations;
+
+  @Mock
+  private CharacterProperties characterProperties;
 
   @Before
   public void setUp() {
     MockitoAnnotations.initMocks(this);
 
-    characterApiDatasource = new CharacterApiDatasource(restOperations);
+    characterApiDatasource = new CharacterApiDataSource(characterProperties, restOperations);
 
     episode = new ArrayList<>();
     episode.add(DATA_EPISODE);
@@ -87,12 +90,12 @@ public class CharacterApiDatasourceTests {
 
   @Test
   public void shouldReturnValidInstanceOfCharacterDatasource_whenCreated() {
-    Assert.assertThat(characterApiDatasource, instanceOf(CharacterDatasource.class));
+    Assert.assertThat(characterApiDatasource, instanceOf(CharacterDataSource.class));
   }
 
   @Test
   public void shouldReturnCharacterEntity_whenRequestIsExecuted() {
-    when(restOperations.getForObject(DATA_URL.concat(DATA_CHARACTER_CODE), CharacterEntity.class)).thenReturn(characterEntity);
+    when(restOperations.getForObject(characterProperties.getCharacterURL(DATA_CHARACTER_CODE), CharacterEntity.class)).thenReturn(characterEntity);
 
     CharacterEntity characterEntity = characterApiDatasource.getCharacter(DATA_CHARACTER_CODE);
 

@@ -1,24 +1,24 @@
 package com.fruz.clean.examples.rickandmorty.application.data.character.repository;
 
-import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.CharacterEntity;
 import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
 import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.domain.repository.CharacterRepository;
 import com.fruz.clean.examples.rickandmorty.common.mapper.Mapper;
-import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.entity.EpisodeEntity;
 
 public class CharacterApiRepository implements CharacterRepository {
 
-  private final CharacterDatasource characterDatasource;
-  private final EpisodeDatasource episodeDatasource;
+  private final CharacterDataSource characterDatasource;
+  private final EpisodeDataSource episodeDatasource;
   private final Mapper<CharacterInfo, CharacterEntity> characterInfoToCharacterEntityMapper;
   private final Mapper<FirstAppearance, EpisodeEntity> firstAppearanceToEpisodeEntityMapper;
 
   public CharacterApiRepository(
-      CharacterDatasource characterDatasource,
-      EpisodeDatasource episodeDatasource,
+      CharacterDataSource characterDatasource,
+      EpisodeDataSource episodeDatasource,
       Mapper<CharacterInfo, CharacterEntity> characterInfoToCharacterEntityMapper,
       Mapper<FirstAppearance, EpisodeEntity> firstAppearanceToEpisodeEntityMapper
   ) {

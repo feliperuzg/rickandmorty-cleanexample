@@ -1,7 +1,7 @@
 package com.fruz.clean.examples.rickandmorty.application.presentation.controller.data.repository;
 
-import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterApiDatasource;
-import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterApiDataSource;
+import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.CharacterEntity;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.LocationEntity;
 import com.fruz.clean.examples.rickandmorty.application.data.character.entity.OriginEntity;
@@ -12,7 +12,7 @@ import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterIn
 import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.domain.repository.CharacterRepository;
 import com.fruz.clean.examples.rickandmorty.common.mapper.Mapper;
-import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.entity.EpisodeEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,10 +32,10 @@ public class CharacterApiRepositoryTests {
   private CharacterApiRepository characterApiRepository;
 
   @Mock
-  private CharacterDatasource characterDatasource;
+  private CharacterDataSource characterDatasource;
   @Mock
 
-  private EpisodeDatasource episodeDatasource;
+  private EpisodeDataSource episodeDatasource;
   private Mapper<CharacterInfo, CharacterEntity> characterInfoToCharacterEntityMapper;
   private Mapper<FirstAppearance, EpisodeEntity> firstAppearanceToEpisodeEntityMapper;
 
@@ -73,7 +73,7 @@ public class CharacterApiRepositoryTests {
   private final String DATA_EPISODE_NAME = "Pilot";
   private final String DATA_EPISODE_CODE = "S01E01";
 
-  private CharacterApiDatasource characterApiDatasource;
+  private CharacterApiDataSource characterApiDatasource;
   private CharacterEntity characterEntity;
   private List<String> episode;
   private LocationEntity location;

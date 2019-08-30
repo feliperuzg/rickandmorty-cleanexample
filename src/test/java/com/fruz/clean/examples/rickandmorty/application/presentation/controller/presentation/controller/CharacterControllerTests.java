@@ -1,9 +1,11 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller;
+package com.fruz.clean.examples.rickandmorty.application.presentation.controller.presentation.controller;
 
 import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
 import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.domain.usecase.CharacterInfoUseCase;
 import com.fruz.clean.examples.rickandmorty.application.presentation.body.CharacterInfoBody;
+import com.fruz.clean.examples.rickandmorty.application.presentation.controller.Character;
+import com.fruz.clean.examples.rickandmorty.application.presentation.controller.CharacterController;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +34,7 @@ public class CharacterControllerTests {
   private final String DATA_EPISODE_CODE = "S01E10";
 
   @Mock
-  CharacterInfoUseCase characterInfoUseCase;
+  private CharacterInfoUseCase characterInfoUseCase;
 
   @Before
   public void setUp() {

@@ -1,8 +1,9 @@
 package com.fruz.clean.examples.rickandmorty.application.presentation.controller.data.datasource.episode;
 
-import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeApiDatasource;
-import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDatasource;
+import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeApiDataSource;
+import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.entity.EpisodeEntity;
+import com.fruz.clean.examples.rickandmorty.configuration.episode.EpisodeProperties;
 import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,16 +18,18 @@ import static org.mockito.Mockito.when;
 import static org.hamcrest.Matchers.instanceOf;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-public class EpisodeApiDatasourceTests {
-  private EpisodeApiDatasource episodeApiDatasource;
+public class EpisodeApiDataSourceTests {
+  private EpisodeApiDataSource episodeApiDatasource;
 
   private EpisodeEntity episodeEntity;
+
+  @Mock
+  private EpisodeProperties episodeProperties;
 
   @Mock
   private RestOperations restOperations;
 
   private final String DATA_EPISODE_ID = "1";
-  private final String DATA_EPISODE_ENDPOINT = "https://rickandmortyapi.com/api/episode/";
 
   private final String DATA_EPISODE_ENTITY_AIRDATE = "December 2, 2013";
   private final String DATA_EPISODE_ENTITY_CREATED = "2017-11-10T12:56:33.798Z";
@@ -50,17 +53,17 @@ public class EpisodeApiDatasourceTests {
     episodeEntity.name = DATA_EPISODE_ENTITY_NAME;
     episodeEntity.url = DATA_EPISODE_ENTITY_URL;
 
-    episodeApiDatasource = new EpisodeApiDatasource(restOperations);
+    episodeApiDatasource = new EpisodeApiDataSource(restOperations, episodeProperties);
   }
 
   @Test
   public void shouldBeValidInstanceOfEpisodeDatasource_whenCreated() {
-    Assert.assertThat(episodeApiDatasource, instanceOf(EpisodeDatasource.class));
+    Assert.assertThat(episodeApiDatasource, instanceOf(EpisodeDataSource.class));
   }
 
   @Test
   public void shouldReturnValidEpisodeEntity_whenFindByIsCalled() {
-    when(restOperations.getForObject(DATA_EPISODE_ENDPOINT.concat(DATA_EPISODE_ID), EpisodeEntity.class)).thenReturn(episodeEntity);
+    when(restOperations.getForObject(episodeProperties.getEpisodeURL(DATA_EPISODE_ID), EpisodeEntity.class)).thenReturn(episodeEntity);
 
     EpisodeEntity episodeEntity = episodeApiDatasource.findBy(DATA_EPISODE_ID);
 
