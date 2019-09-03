@@ -1,4 +1,4 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller.data.datasource.character;
+package com.fruz.clean.examples.rickandmorty.application.data.datasource.character;
 
 import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterApiDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.character.datasource.CharacterDataSource;

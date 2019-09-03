@@ -10,8 +10,8 @@ import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterIn
 import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.domain.repository.CharacterRepository;
 import com.fruz.clean.examples.rickandmorty.application.domain.usecase.CharacterInfoUseCase;
-import com.fruz.clean.examples.rickandmorty.application.presentation.controller.Character;
-import com.fruz.clean.examples.rickandmorty.application.presentation.controller.CharacterController;
+import com.fruz.clean.examples.rickandmorty.application.Character;
+import com.fruz.clean.examples.rickandmorty.application.CharacterController;
 import com.fruz.clean.examples.rickandmorty.common.mapper.Mapper;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeApiDataSource;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.datasource.EpisodeDataSource;
@@ -26,7 +26,7 @@ import org.springframework.web.client.RestTemplate;
 public class CharacterConfiguration {
 
   @Bean
-  public Character character(CharacterInfoUseCase characterInfoUseCase) {
+  Character character(CharacterInfoUseCase characterInfoUseCase) {
     return new CharacterController(characterInfoUseCase);
   }
 

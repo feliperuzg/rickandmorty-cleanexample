@@ -1,4 +1,4 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller;
+package com.fruz.clean.examples.rickandmorty.application;
 
 import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
 import com.fruz.clean.examples.rickandmorty.application.presentation.body.CharacterInfoBody;

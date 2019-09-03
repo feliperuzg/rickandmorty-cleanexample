@@ -1,4 +1,4 @@
-package com.fruz.clean.examples.rickandmorty.application.common.mapper;
+package com.fruz.clean.examples.rickandmorty.common.mapper;
 
 import com.fruz.clean.examples.rickandmorty.common.mapper.Mapper;
 import java.util.ArrayList;

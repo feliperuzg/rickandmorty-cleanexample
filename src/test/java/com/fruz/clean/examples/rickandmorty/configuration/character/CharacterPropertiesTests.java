@@ -1,6 +1,5 @@
-package com.fruz.clean.examples.rickandmorty.application.configuration.Character;
+package com.fruz.clean.examples.rickandmorty.configuration.character;
 
-import com.fruz.clean.examples.rickandmorty.configuration.character.CharacterProperties;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

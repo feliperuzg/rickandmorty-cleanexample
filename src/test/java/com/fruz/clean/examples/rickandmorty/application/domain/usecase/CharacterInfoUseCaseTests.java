@@ -1,4 +1,4 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller.domain.usecase;
+package com.fruz.clean.examples.rickandmorty.application.domain.usecase;
 
 import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
 import com.fruz.clean.examples.rickandmorty.application.domain.repository.CharacterRepository;

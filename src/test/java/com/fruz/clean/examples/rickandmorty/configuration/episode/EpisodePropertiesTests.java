@@ -1,12 +1,9 @@
-package com.fruz.clean.examples.rickandmorty.application.configuration.Episode;
+package com.fruz.clean.examples.rickandmorty.configuration.episode;
 
-import com.fruz.clean.examples.rickandmorty.configuration.episode.EpisodeProperties;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTestContextBootstrapper;
-import org.springframework.test.context.BootstrapWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 

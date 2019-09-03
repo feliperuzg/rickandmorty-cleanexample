@@ -1,4 +1,4 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller.data.mapper;
+package com.fruz.clean.examples.rickandmorty.application.data.mapper;
 
 import com.fruz.clean.examples.rickandmorty.application.data.character.mapper.FirstAppearanceToEpisodeEntityMapper;
 import com.fruz.clean.examples.rickandmorty.application.data.episode.entity.EpisodeEntity;

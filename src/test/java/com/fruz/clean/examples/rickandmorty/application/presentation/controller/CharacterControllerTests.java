@@ -1,11 +1,11 @@
-package com.fruz.clean.examples.rickandmorty.application.presentation.controller.presentation.controller;
+package com.fruz.clean.examples.rickandmorty.application.presentation.controller;
 
+import com.fruz.clean.examples.rickandmorty.application.CharacterController;
 import com.fruz.clean.examples.rickandmorty.application.domain.model.CharacterInfo;
 import com.fruz.clean.examples.rickandmorty.application.domain.model.FirstAppearance;
 import com.fruz.clean.examples.rickandmorty.application.domain.usecase.CharacterInfoUseCase;
 import com.fruz.clean.examples.rickandmorty.application.presentation.body.CharacterInfoBody;
-import com.fruz.clean.examples.rickandmorty.application.presentation.controller.Character;
-import com.fruz.clean.examples.rickandmorty.application.presentation.controller.CharacterController;
+import com.fruz.clean.examples.rickandmorty.application.Character;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +30,7 @@ public class CharacterControllerTests {
   private final String DATA_CHARACTER_STATUS = "status";
   private final String DATA_CHARACTER_SPECIES = "species";
   private final String DATA_CHARACTER_GENDER = "gender";
-  private final String DATA_EPISODE_NAME = "Episode name";
+  private final String DATA_EPISODE_NAME = "episode name";
   private final String DATA_EPISODE_CODE = "S01E10";
 
   @Mock
@@ -74,11 +74,5 @@ public class CharacterControllerTests {
     Assert.assertEquals(DATA_CHARACTER_STATUS, characterInfo.status);
     Assert.assertEquals(DATA_EPISODE_CODE ,characterInfo.firstAppearance.code);
     Assert.assertEquals(DATA_EPISODE_NAME ,characterInfo.firstAppearance.name);
-  }
-
-  @Test(expected = MethodArgumentNotValidException.class)
-  public void shouldThrowMethodArgumentNotValidException_WhenCharacterInfoBodyHasNoCode() {
-    CharacterInfoBody characterInfoBody1 = new CharacterInfoBody();
-    characterController.info(characterInfoBody1);
   }
 }
