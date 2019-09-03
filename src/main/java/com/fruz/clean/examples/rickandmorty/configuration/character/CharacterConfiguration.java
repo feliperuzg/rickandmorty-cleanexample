@@ -26,7 +26,7 @@ import org.springframework.web.client.RestTemplate;
 public class CharacterConfiguration {
 
   @Bean
-  Character character(CharacterInfoUseCase characterInfoUseCase) {
+  public Character character(CharacterInfoUseCase characterInfoUseCase) {
     return new CharacterController(characterInfoUseCase);
   }
 
