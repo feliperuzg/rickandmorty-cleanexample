@@ -111,3 +111,7 @@ We will get into the `episode` array from the first request and extract the firs
     "created": "2017-11-10T12:56:33.798Z"
 }
 ```
+
+## Class Diagram
+
+![Diagram](RickAndMorty.png)
